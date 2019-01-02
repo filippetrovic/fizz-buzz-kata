@@ -17,7 +17,7 @@ public class Rule {
     return matcher.test(number);
   }
 
-  public String getNumberSubstitution(Integer number) {
+  public String transform(Integer number) {
     return supplier.apply(number);
   }
 }

@@ -2,7 +2,7 @@ package software.crafting.serbia;
 
 import java.util.function.Function;
 
-public class FizzBuzzSupplier implements Function<Integer, String> {
+public class FizzBuzzTransformer implements Function<Integer, String> {
 
   private static final String FIZZ_BUZZ = "FizzBuzz";
 
