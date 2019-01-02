@@ -4,10 +4,11 @@ public class FizzBuzz {
 
   public static final String FIZZ = "Fizz";
   public static final String BUZZ = "Buzz";
+  public static final String FIZZ_BUZZ = "FizzBuzz";
 
   public String execute(int number) {
     if (isFizz(number) && isBuzz(number)) {
-      return "FizzBuzz";
+      return FIZZ_BUZZ;
     }
 
     if (isFizz(number)) {
