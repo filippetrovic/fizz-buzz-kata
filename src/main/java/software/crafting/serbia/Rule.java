@@ -6,11 +6,11 @@ import java.util.function.Predicate;
 public class Rule {
 
   private Predicate<Integer> matcher;
-  private  Function<Integer, String> supplier;
+  private  Function<Integer, String> transformer;
 
-  public Rule(Predicate<Integer> matcher, Function<Integer, String> supplier) {
+  public Rule(Predicate<Integer> matcher, Function<Integer, String> transformer) {
     this.matcher = matcher;
-    this.supplier = supplier;
+    this.transformer = transformer;
   }
 
   public boolean matches(int number) {
@@ -18,6 +18,6 @@ public class Rule {
   }
 
   public String transform(Integer number) {
-    return supplier.apply(number);
+    return transformer.apply(number);
   }
 }
