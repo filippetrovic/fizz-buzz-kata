@@ -10,13 +10,6 @@ public class FuzzBuzzAcceptanceTest {
 
   @Test
   public void shouldReturnUnchangedNumber() {
-    // Given
-
-    // When
-    String output = fizzBuzz.execute(1);
-
-    // Then
-    assertThat(output).isEqualTo("1");
-
+    assertThat(fizzBuzz.execute(1)).isEqualTo("1");
   }
 }
