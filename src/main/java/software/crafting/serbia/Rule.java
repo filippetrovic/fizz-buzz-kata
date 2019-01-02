@@ -1,11 +1,13 @@
 package software.crafting.serbia;
 
+import java.util.function.Predicate;
+
 public class Rule {
 
-  private Matcher matcher;
+  private Predicate<Integer> matcher;
   private ValueSupplier supplier;
 
-  public Rule(Matcher matcher, ValueSupplier supplier) {
+  public Rule(Predicate<Integer> matcher, ValueSupplier supplier) {
     this.matcher = matcher;
     this.supplier = supplier;
   }
