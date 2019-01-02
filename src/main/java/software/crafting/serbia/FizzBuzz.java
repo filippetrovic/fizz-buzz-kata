@@ -6,6 +6,8 @@ public class FizzBuzz {
   public static final String FIZZ_BUZZ = "FizzBuzz";
 
   private final Rule fizzRule = new Rule(new FizzMatcher(), new FizzSupplier());
+  private final Rule buzzRule = new Rule(new BuzzMatcher(), new FizzSupplier());
+
 
   public String execute(int number) {
     if (isFizzBuzz(number)) {
@@ -15,7 +17,7 @@ public class FizzBuzz {
     if (fizzRule.matches(number)) {
       return fizzRule.getNumberSubstitution();
     }
-    if (isBuzz(number)) {
+    if (buzzRule.matches(number)) {
       return BUZZ;
     }
     return unchanged(number);
