@@ -24,5 +24,7 @@ public class FuzzBuzzAcceptanceTest {
   @Test
   public void shouldReturnFizzIfNumberIsDivisibleBy3() {
     assertThat(fizzBuzz.execute(3)).isEqualTo("Fizz");
+
+    assertThat(fizzBuzz.execute(6)).isEqualTo("Fizz");
   }
 }
