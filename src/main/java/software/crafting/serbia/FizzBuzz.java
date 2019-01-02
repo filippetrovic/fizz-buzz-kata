@@ -8,10 +8,14 @@ public class FizzBuzz {
     if (isFizz(number)) {
       return FIZZ;
     }
-    if (number % 5 == 0) {
+    if (isBuzz(number)) {
       return "Buzz";
     }
     return unchanged(number);
+  }
+
+  private boolean isBuzz(int number) {
+    return number % 5 == 0;
   }
 
   private String unchanged(int number) {
