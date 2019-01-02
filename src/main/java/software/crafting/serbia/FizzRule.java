@@ -2,10 +2,12 @@ package software.crafting.serbia;
 
 public class FizzRule {
 
-  private FizzMatcher fizzMatcher = new FizzMatcher();
-  private FizzSupplier fizzSupplier = new FizzSupplier();
+  private FizzMatcher fizzMatcher;
+  private FizzSupplier fizzSupplier;
 
-  public FizzRule() {
+  public FizzRule(FizzMatcher fizzMatcher, FizzSupplier fizzSupplier) {
+    this.fizzMatcher = fizzMatcher;
+    this.fizzSupplier = fizzSupplier;
   }
 
   public boolean matches(int number) {
