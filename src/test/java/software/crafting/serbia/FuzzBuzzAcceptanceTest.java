@@ -9,7 +9,7 @@ public class FuzzBuzzAcceptanceTest {
   private FizzBuzz fizzBuzz = new FizzBuzz();
 
   @Test
-  public void shouldReturnUnchangedNumber() {
+  public void shouldReturnUnchangedNumberIfItsNotDivisibleBy3or5() {
     assertThat(fizzBuzz.execute(1)).isEqualTo("1");
 
     assertThat(fizzBuzz.execute(4)).isEqualTo("4");
@@ -22,7 +22,7 @@ public class FuzzBuzzAcceptanceTest {
   }
 
   @Test
-  public void shouldReturnFizzIfNumberIsDivisibleBy3() {
+  public void shouldReturnFizzIfNumberIsDivisibleOnlyBy3() {
     assertThat(fizzBuzz.execute(3)).isEqualTo("Fizz");
 
     assertThat(fizzBuzz.execute(6)).isEqualTo("Fizz");
@@ -37,7 +37,7 @@ public class FuzzBuzzAcceptanceTest {
   }
 
   @Test
-  public void shouldReturnBuzzIfNumberIsDivisibleBy5() {
+  public void shouldReturnBuzzIfNumberIsDivisibleOnlyBy5() {
     assertThat(fizzBuzz.execute(5)).isEqualTo("Buzz");
 
     assertThat(fizzBuzz.execute(10)).isEqualTo("Buzz");
