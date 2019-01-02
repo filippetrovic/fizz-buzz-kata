@@ -11,8 +11,9 @@ public class FizzBuzz {
     Rule fizzBuzzRule = new Rule(new IsNumberDivisibleByThree().and(new IsNumberDivisibleByFive()), new FizzBuzzTransformer());
     Rule fizzRule = new Rule(new IsNumberDivisibleByThree(), new FizzTransformer());
     Rule buzzRule = new Rule(new IsNumberDivisibleByFive(), new BuzzTransformer());
+    Rule otherRule = new Rule((Integer i) -> true, String::valueOf);
 
-    rules = Arrays.asList(fizzBuzzRule, fizzRule, buzzRule);
+    rules = Arrays.asList(fizzBuzzRule, fizzRule, buzzRule, otherRule);
   }
 
 
@@ -22,11 +23,7 @@ public class FizzBuzz {
         return rule.transform(number);
       }
     }
-    return unchanged(number);
-  }
-
-  private String unchanged(int number) {
-    return String.valueOf(number);
+    return null;
   }
 
 }
