@@ -5,16 +5,15 @@ public class FizzBuzz {
   public static final String BUZZ = "Buzz";
   public static final String FIZZ_BUZZ = "FizzBuzz";
 
-  private FizzMatcher fizzMatcher = new FizzMatcher();
-  private FizzSupplier fizzSupplier = new FizzSupplier();
+  private final FizzRule fizzRule = new FizzRule();
 
   public String execute(int number) {
     if (isFizzBuzz(number)) {
       return FIZZ_BUZZ;
     }
 
-    if (fizzMatcher.matches(number)) {
-      return fizzSupplier.transform();
+    if (fizzRule.fizzMatcher.matches(number)) {
+      return fizzRule.fizzSupplier.transform();
     }
     if (isBuzz(number)) {
       return BUZZ;
