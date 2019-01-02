@@ -8,12 +8,11 @@ public class FizzRule {
   public FizzRule() {
   }
 
-  public FizzMatcher getFizzMatcher() {
-    return fizzMatcher;
+  public boolean matches(int number) {
+    return fizzMatcher.matches(number);
   }
 
-  public FizzSupplier getFizzSupplier() {
-    return fizzSupplier;
+  public String transform() {
+    return fizzSupplier.transform();
   }
-
 }
