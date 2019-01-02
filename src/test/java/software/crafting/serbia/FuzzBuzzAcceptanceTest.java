@@ -54,5 +54,11 @@ public class FuzzBuzzAcceptanceTest {
   @Test
   public void shouldReturnFizzBuzzIfNumberIsDivisibleByBoth3And5() {
     assertThat(fizzBuzz.execute(15)).isEqualTo("FizzBuzz");
+
+    assertThat(fizzBuzz.execute(30)).isEqualTo("FizzBuzz");
+
+    assertThat(fizzBuzz.execute(45)).isEqualTo("FizzBuzz");
+
+    assertThat(fizzBuzz.execute(90)).isEqualTo("FizzBuzz");
   }
 }

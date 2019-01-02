@@ -6,7 +6,7 @@ public class FizzBuzz {
   public static final String BUZZ = "Buzz";
 
   public String execute(int number) {
-    if (number == 15) {
+    if (number % 15 == 0) {
       return "FizzBuzz";
     }
 
