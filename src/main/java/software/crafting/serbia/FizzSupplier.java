@@ -1,10 +1,10 @@
 package software.crafting.serbia;
 
-public class FizzTransformer {
+public class FizzSupplier {
 
   public static final String FIZZ = "Fizz";
 
-  public String transform(int number) {
+  public String transform() {
     return FIZZ;
   }
 }

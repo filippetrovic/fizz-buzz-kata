@@ -6,7 +6,7 @@ public class FizzBuzz {
   public static final String FIZZ_BUZZ = "FizzBuzz";
 
   private FizzMatcher fizzMatcher = new FizzMatcher();
-  private FizzTransformer fizzTransformer = new FizzTransformer();
+  private FizzSupplier fizzSupplier = new FizzSupplier();
 
   public String execute(int number) {
     if (isFizzBuzz(number)) {
@@ -14,7 +14,7 @@ public class FizzBuzz {
     }
 
     if (fizzMatcher.matches(number)) {
-      return fizzTransformer.transform(number);
+      return fizzSupplier.transform();
     }
     if (isBuzz(number)) {
       return BUZZ;
