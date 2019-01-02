@@ -8,6 +8,10 @@ public class FizzBuzz {
     if (isFizz(number)) {
       return FIZZ;
     }
+    return unchanged(number);
+  }
+
+  private String unchanged(int number) {
     return String.valueOf(number);
   }
 
