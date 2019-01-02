@@ -26,5 +26,13 @@ public class FuzzBuzzAcceptanceTest {
     assertThat(fizzBuzz.execute(3)).isEqualTo("Fizz");
 
     assertThat(fizzBuzz.execute(6)).isEqualTo("Fizz");
+
+    assertThat(fizzBuzz.execute(9)).isEqualTo("Fizz");
+
+    assertThat(fizzBuzz.execute(99)).isEqualTo("Fizz");
+
+    assertThat(fizzBuzz.execute(33)).isEqualTo("Fizz");
+
+    assertThat(fizzBuzz.execute(18)).isEqualTo("Fizz");
   }
 }
