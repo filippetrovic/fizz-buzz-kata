@@ -1,5 +1,7 @@
 package software.crafting.serbia;
 
-public interface Matcher {
+import java.util.function.Predicate;
+
+public interface Matcher extends Predicate<Integer> {
   boolean test(Integer number);
 }
