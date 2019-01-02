@@ -21,14 +21,10 @@ public class FizzBuzz {
 
 
   public String execute(int number) {
-    if (fizzBuzzRule.matches(number)) {
-      return fizzBuzzRule.getNumberSubstitution();
-    }
-    if (fizzRule.matches(number)) {
-      return fizzRule.getNumberSubstitution();
-    }
-    if (buzzRule.matches(number)) {
-      return buzzRule.getNumberSubstitution();
+    for (Rule rule : rules) {
+      if (rule.matches(number)) {
+        return rule.getNumberSubstitution();
+      }
     }
     return unchanged(number);
   }
