@@ -5,7 +5,7 @@ public class FizzBuzz {
   public static final String BUZZ = "Buzz";
   public static final String FIZZ_BUZZ = "FizzBuzz";
 
-  private final FizzRule fizzRule = new FizzRule(new FizzMatcher(), new FizzSupplier());
+  private final Rule fizzRule = new Rule(new FizzMatcher(), new FizzSupplier());
 
   public String execute(int number) {
     if (isFizzBuzz(number)) {
