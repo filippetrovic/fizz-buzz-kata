@@ -8,9 +8,9 @@ public class FizzBuzz {
   private List<Rule> rules;
 
   public FizzBuzz() {
-    Rule fizzBuzzRule = new Rule(new FizzMatcher().and(new BuzzMatcher()), new FizzBuzzSupplier());
-    Rule fizzRule = new Rule(new FizzMatcher(), new FizzSupplier());
-    Rule buzzRule = new Rule(new BuzzMatcher(), new BuzzSupplier());
+    Rule fizzBuzzRule = new Rule(new IsNumberDivisibleByThree().and(new IsNumberDivisibleByFive()), new FizzBuzzSupplier());
+    Rule fizzRule = new Rule(new IsNumberDivisibleByThree(), new FizzSupplier());
+    Rule buzzRule = new Rule(new IsNumberDivisibleByFive(), new BuzzSupplier());
 
     rules = Arrays.asList(fizzBuzzRule, fizzRule, buzzRule);
   }
