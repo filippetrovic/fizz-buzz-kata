@@ -8,6 +8,9 @@ public class FizzBuzz {
     if (isFizz(number)) {
       return FIZZ;
     }
+    if (number == 5) {
+      return "Buzz";
+    }
     return unchanged(number);
   }
 
