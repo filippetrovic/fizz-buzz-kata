@@ -2,6 +2,7 @@ package software.crafting.serbia;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class FizzBuzz {
 
@@ -11,7 +12,7 @@ public class FizzBuzz {
     Rule fizzBuzzRule = new Rule(new IsNumberDivisibleByThree().and(new IsNumberDivisibleByFive()), new FizzBuzzTransformer());
     Rule fizzRule = new Rule(new IsNumberDivisibleByThree(), new FizzTransformer());
     Rule buzzRule = new Rule(new IsNumberDivisibleByFive(), new BuzzTransformer());
-    Rule otherRule = new Rule((Integer i) -> true, String::valueOf);
+    Rule otherRule = new Rule(new MatchAll(), String::valueOf);
 
     rules = Arrays.asList(fizzBuzzRule, fizzRule, buzzRule, otherRule);
   }
@@ -26,4 +27,11 @@ public class FizzBuzz {
     return null;
   }
 
+  private static class MatchAll implements Predicate<Integer> {
+
+    @Override
+    public boolean test(Integer i) {
+      return true;
+    }
+  }
 }
