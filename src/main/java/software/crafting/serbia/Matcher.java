@@ -1,5 +1,5 @@
 package software.crafting.serbia;
 
 public interface Matcher {
-  boolean matches(Integer number);
+  boolean test(Integer number);
 }

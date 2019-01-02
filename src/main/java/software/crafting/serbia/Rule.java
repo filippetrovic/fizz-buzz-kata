@@ -11,7 +11,7 @@ public class Rule {
   }
 
   public boolean matches(int number) {
-    return matcher.matches(number);
+    return matcher.test(number);
   }
 
   public String getNumberSubstitution() {
