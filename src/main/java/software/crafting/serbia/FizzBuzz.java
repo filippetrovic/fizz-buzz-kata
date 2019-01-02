@@ -7,10 +7,11 @@ public class FizzBuzz {
 
   private final Rule fizzRule = new Rule(new FizzMatcher(), new FizzSupplier());
   private final Rule buzzRule = new Rule(new BuzzMatcher(), new BuzzSupplier());
+  private final Rule fizzBuzzRule = new Rule(new FizzMatcher().and(new BuzzMatcher()), new BuzzSupplier());
 
 
   public String execute(int number) {
-    if (isFizzBuzz(number)) {
+    if (fizzBuzzRule.matches(number)) {
       return FIZZ_BUZZ;
     }
 
