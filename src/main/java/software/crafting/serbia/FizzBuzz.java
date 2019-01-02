@@ -3,7 +3,6 @@ package software.crafting.serbia;
 public class FizzBuzz {
 
   public static final String BUZZ = "Buzz";
-  public static final String FIZZ_BUZZ = "FizzBuzz";
 
   private final Rule fizzRule = new Rule(new FizzMatcher(), new FizzSupplier());
   private final Rule buzzRule = new Rule(new BuzzMatcher(), new BuzzSupplier());
@@ -14,7 +13,6 @@ public class FizzBuzz {
     if (fizzBuzzRule.matches(number)) {
       return fizzBuzzRule.getNumberSubstitution();
     }
-
     if (fizzRule.matches(number)) {
       return fizzRule.getNumberSubstitution();
     }
