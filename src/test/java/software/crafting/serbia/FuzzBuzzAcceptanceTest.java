@@ -20,4 +20,9 @@ public class FuzzBuzzAcceptanceTest {
 
     assertThat(fizzBuzz.execute(98)).isEqualTo("98");
   }
+
+  @Test
+  public void shouldReturnFizzIfNumberIsDivisibleBy3() {
+    assertThat(fizzBuzz.execute(3)).isEqualTo("Fizz");
+  }
 }
