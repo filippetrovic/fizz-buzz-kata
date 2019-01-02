@@ -3,13 +3,14 @@ package software.crafting.serbia;
 public class FizzBuzz {
 
   public static final String FIZZ = "Fizz";
+  public static final String BUZZ = "Buzz";
 
   public String execute(int number) {
     if (isFizz(number)) {
       return FIZZ;
     }
     if (isBuzz(number)) {
-      return "Buzz";
+      return BUZZ;
     }
     return unchanged(number);
   }
