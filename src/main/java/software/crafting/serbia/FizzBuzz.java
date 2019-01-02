@@ -2,6 +2,7 @@ package software.crafting.serbia;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Function;
 import java.util.function.Predicate;
 
 public class FizzBuzz {
@@ -12,7 +13,7 @@ public class FizzBuzz {
     Rule fizzBuzzRule = new Rule(new IsNumberDivisibleByThree().and(new IsNumberDivisibleByFive()), new FizzBuzzTransformer());
     Rule fizzRule = new Rule(new IsNumberDivisibleByThree(), new FizzTransformer());
     Rule buzzRule = new Rule(new IsNumberDivisibleByFive(), new BuzzTransformer());
-    Rule otherRule = new Rule(new MatchAll(), String::valueOf);
+    Rule otherRule = new Rule(new MatchAll(), new NoOppTransformer());
 
     rules = Arrays.asList(fizzBuzzRule, fizzRule, buzzRule, otherRule);
   }
@@ -32,6 +33,14 @@ public class FizzBuzz {
     @Override
     public boolean test(Integer i) {
       return true;
+    }
+  }
+
+  private static class NoOppTransformer implements Function<Integer, String> {
+
+    @Override
+    public String apply(Integer obj) {
+      return String.valueOf(obj);
     }
   }
 }
