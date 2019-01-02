@@ -12,8 +12,8 @@ public class FizzBuzz {
       return FIZZ_BUZZ;
     }
 
-    if (fizzRule.fizzMatcher.matches(number)) {
-      return fizzRule.fizzSupplier.transform();
+    if (fizzRule.getFizzMatcher().matches(number)) {
+      return fizzRule.getFizzSupplier().transform();
     }
     if (isBuzz(number)) {
       return BUZZ;
