@@ -4,7 +4,7 @@ public class FizzMatcher implements Matcher {
 
 
   @Override
-  public boolean matches(int number) {
+  public boolean matches(Integer number) {
     return number % 3 == 0;
   }
 }
