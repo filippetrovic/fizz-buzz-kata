@@ -2,8 +2,6 @@ package software.crafting.serbia;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.function.Function;
-import java.util.function.Predicate;
 
 public class FizzBuzz {
 
@@ -28,19 +26,4 @@ public class FizzBuzz {
     return null;
   }
 
-  private static class MatchAll implements Predicate<Integer> {
-
-    @Override
-    public boolean test(Integer i) {
-      return true;
-    }
-  }
-
-  private static class NoOppTransformer implements Function<Integer, String> {
-
-    @Override
-    public String apply(Integer obj) {
-      return String.valueOf(obj);
-    }
-  }
 }
