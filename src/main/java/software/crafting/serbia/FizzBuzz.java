@@ -2,9 +2,15 @@ package software.crafting.serbia;
 
 public class FizzBuzz {
 
-  private final Rule fizzRule = new Rule(new FizzMatcher(), new FizzSupplier());
-  private final Rule buzzRule = new Rule(new BuzzMatcher(), new BuzzSupplier());
-  private final Rule fizzBuzzRule = new Rule(new FizzMatcher().and(new BuzzMatcher()), new FizzBuzzSupplier());
+  private final Rule fizzRule;
+  private final Rule buzzRule;
+  private final Rule fizzBuzzRule;
+
+  public FizzBuzz() {
+    fizzRule = new Rule(new FizzMatcher(), new FizzSupplier());
+    buzzRule = new Rule(new BuzzMatcher(), new BuzzSupplier());
+    fizzBuzzRule = new Rule(new FizzMatcher().and(new BuzzMatcher()), new FizzBuzzSupplier());
+  }
 
 
   public String execute(int number) {
