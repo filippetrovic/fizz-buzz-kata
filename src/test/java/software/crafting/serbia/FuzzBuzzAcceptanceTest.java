@@ -39,5 +39,9 @@ public class FuzzBuzzAcceptanceTest {
   @Test
   public void shouldReturnBuzzIfNumberIsDivisibleBy5() {
     assertThat(fizzBuzz.execute(5)).isEqualTo("Buzz");
+
+    assertThat(fizzBuzz.execute(10)).isEqualTo("Buzz");
+
+    assertThat(fizzBuzz.execute(20)).isEqualTo("Buzz");
   }
 }

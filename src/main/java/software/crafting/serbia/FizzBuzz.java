@@ -8,7 +8,7 @@ public class FizzBuzz {
     if (isFizz(number)) {
       return FIZZ;
     }
-    if (number == 5) {
+    if (number % 5 == 0) {
       return "Buzz";
     }
     return unchanged(number);
