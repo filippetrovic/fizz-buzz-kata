@@ -5,16 +5,12 @@ import java.util.List;
 
 public class FizzBuzz {
 
-  private final Rule fizzRule;
-  private final Rule buzzRule;
-  private final Rule fizzBuzzRule;
-
   private List<Rule> rules;
 
   public FizzBuzz() {
-    fizzRule = new Rule(new FizzMatcher(), new FizzSupplier());
-    buzzRule = new Rule(new BuzzMatcher(), new BuzzSupplier());
-    fizzBuzzRule = new Rule(new FizzMatcher().and(new BuzzMatcher()), new FizzBuzzSupplier());
+    Rule fizzBuzzRule = new Rule(new FizzMatcher().and(new BuzzMatcher()), new FizzBuzzSupplier());
+    Rule fizzRule = new Rule(new FizzMatcher(), new FizzSupplier());
+    Rule buzzRule = new Rule(new BuzzMatcher(), new BuzzSupplier());
 
     rules = Arrays.asList(fizzBuzzRule, fizzRule, buzzRule);
   }
