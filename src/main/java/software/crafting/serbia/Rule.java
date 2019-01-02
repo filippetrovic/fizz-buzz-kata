@@ -14,7 +14,7 @@ public class Rule {
     return matcher.matches(number);
   }
 
-  public String transform() {
-    return supplier.transform();
+  public String getNumberSubstitution() {
+    return supplier.getValue();
   }
 }

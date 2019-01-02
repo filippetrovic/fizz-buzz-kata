@@ -13,7 +13,7 @@ public class FizzBuzz {
     }
 
     if (fizzRule.matches(number)) {
-      return fizzRule.transform();
+      return fizzRule.getNumberSubstitution();
     }
     if (isBuzz(number)) {
       return BUZZ;

@@ -2,10 +2,10 @@ package software.crafting.serbia;
 
 public class FizzSupplier implements ValueSupplier {
 
-  public static final String FIZZ = "Fizz";
+  private static final String FIZZ = "Fizz";
 
   @Override
-  public String transform() {
+  public String getValue() {
     return FIZZ;
   }
 }
