@@ -6,12 +6,14 @@ public class FizzBuzz {
   public static final String BUZZ = "Buzz";
   public static final String FIZZ_BUZZ = "FizzBuzz";
 
+  private FizzMatcher fizzMatcher = new FizzMatcher();
+
   public String execute(int number) {
     if (isFizzBuzz(number)) {
       return FIZZ_BUZZ;
     }
 
-    if (isFizz(number)) {
+    if (fizzMatcher.matches(number)) {
       return FIZZ;
     }
     if (isBuzz(number)) {
