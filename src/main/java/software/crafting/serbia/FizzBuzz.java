@@ -19,7 +19,7 @@ public class FizzBuzz {
   public String execute(int number) {
     for (Rule rule : rules) {
       if (rule.matches(number)) {
-        return rule.getNumberSubstitution();
+        return rule.getNumberSubstitution(number);
       }
     }
     return unchanged(number);

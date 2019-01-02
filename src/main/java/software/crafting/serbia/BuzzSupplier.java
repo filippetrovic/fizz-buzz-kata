@@ -1,11 +1,13 @@
 package software.crafting.serbia;
 
-public class BuzzSupplier implements ValueSupplier {
+import java.util.function.Function;
+
+public class BuzzSupplier implements Function<Integer, String> {
 
   private static final String BUZZ = "Buzz";
 
   @Override
-  public String getValue() {
+  public String apply(Integer number) {
     return BUZZ;
   }
 }
