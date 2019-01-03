@@ -24,17 +24,18 @@ public class FuzzBuzzAccTestParameterized {
   private final FizzBuzz fizzBuzz;
 
   private Integer number;
-  private String output;
+  private String expectedOutput;
 
-  public FuzzBuzzAccTestParameterized(Integer number, String output) {
+  public FuzzBuzzAccTestParameterized(Integer number, String expectedOutput) {
     fizzBuzz = new FizzBuzz(RuleChains.getOriginalFizzBuzzRuleChain());
 
     this.number = number;
-    this.output = output;
+    this.expectedOutput = expectedOutput;
   }
 
   @Test
   public void name() {
-    Assertions.assertThat(fizzBuzz.execute(number)).isEqualTo(output);
+    Assertions.assertThat(fizzBuzz.execute(number))
+        .isEqualTo(expectedOutput);
   }
 }
