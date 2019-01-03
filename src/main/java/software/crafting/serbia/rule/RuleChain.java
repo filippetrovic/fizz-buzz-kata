@@ -1,4 +1,4 @@
-package software.crafting.serbia;
+package software.crafting.serbia.rule;
 
 import java.util.Collections;
 import java.util.List;
@@ -11,7 +11,7 @@ public class RuleChain {
     this.rules = Collections.unmodifiableList(rules);
   }
 
-  String transform(int number) {
+  public String transform(int number) {
     return rules.stream()
         .filter(rule -> rule.matches(number))
         .findFirst()

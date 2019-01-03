@@ -1,4 +1,4 @@
-package software.crafting.serbia;
+package software.crafting.serbia.rule;
 
 import java.util.List;
 
