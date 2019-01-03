@@ -3,6 +3,7 @@ package software.crafting.serbia;
 import org.junit.Before;
 import org.junit.Test;
 import software.crafting.serbia.rule.Rule;
+import software.crafting.serbia.rule.RuleChain;
 import software.crafting.serbia.rule.RuleChainBuilder;
 import software.crafting.serbia.rule.predicate.IsNumberDivisibleByFive;
 import software.crafting.serbia.rule.predicate.IsNumberDivisibleByThree;
@@ -25,12 +26,16 @@ public class FuzzBuzzAcceptanceTest {
     Rule buzzRule = new Rule(new IsNumberDivisibleByFive(), new BuzzTransformer());
     Rule otherRule = new Rule(new MatchAll(), new NoOppTransformer());
 
-    fizzBuzz = new FizzBuzz(new RuleChainBuilder()
+    fizzBuzz = new FizzBuzz(getOriginalFizzBuzzRuleChain(fizzBuzzRule, fizzRule, buzzRule, otherRule));
+  }
+
+  private static RuleChain getOriginalFizzBuzzRuleChain(Rule fizzBuzzRule, Rule fizzRule, Rule buzzRule, Rule otherRule) {
+    return new RuleChainBuilder()
         .addNextRule(fizzBuzzRule)
         .addNextRule(fizzRule)
         .addNextRule(buzzRule)
         .addNextRule(otherRule)
-        .createRuleChain());
+        .createRuleChain();
   }
 
   @Test
