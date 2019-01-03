@@ -1,6 +1,5 @@
 package software.crafting.serbia;
 
-import org.assertj.core.api.Assertions;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -9,6 +8,8 @@ import software.crafting.serbia.rule.RuleChains;
 
 import java.util.Arrays;
 import java.util.Collection;
+
+import static org.assertj.core.api.Assertions.*;
 
 @RunWith(Parameterized.class)
 public class FuzzBuzzAccTestParameterized {
@@ -28,6 +29,14 @@ public class FuzzBuzzAccTestParameterized {
         {99, "Fizz"},
         {33, "Fizz"},
         {18, "Fizz"},
+
+        {5, "Buzz"},
+        {10, "Buzz"},
+        {20, "Buzz"},
+        {25, "Buzz"},
+        {50, "Buzz"},
+        {100, "Buzz"},
+
     });
   }
 
@@ -46,7 +55,7 @@ public class FuzzBuzzAccTestParameterized {
 
   @Test
   public void name() {
-    Assertions.assertThat(fizzBuzz.execute(number))
+    assertThat(fizzBuzz.execute(number))
         .isEqualTo(expectedOutput);
   }
 }
