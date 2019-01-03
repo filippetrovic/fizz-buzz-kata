@@ -11,8 +11,6 @@ import software.crafting.serbia.rule.transformer.FizzBuzzTransformer;
 import software.crafting.serbia.rule.transformer.FizzTransformer;
 import software.crafting.serbia.rule.transformer.NoOppTransformer;
 
-import java.util.Arrays;
-
 public class FizzBuzz {
 
   private final RuleChain ruleChain;
@@ -24,7 +22,10 @@ public class FizzBuzz {
     Rule otherRule = new Rule(new MatchAll(), new NoOppTransformer());
 
     ruleChain = new RuleChainBuilder()
-        .setRules(Arrays.asList(fizzBuzzRule, fizzRule, buzzRule, otherRule))
+        .addNextRule(fizzBuzzRule)
+        .addNextRule(fizzRule)
+        .addNextRule(buzzRule)
+        .addNextRule(otherRule)
         .createRuleChain();
   }
 
