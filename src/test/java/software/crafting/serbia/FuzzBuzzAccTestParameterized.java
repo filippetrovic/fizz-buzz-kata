@@ -16,12 +16,12 @@ public class FuzzBuzzAccTestParameterized {
 
   @Parameters
   public static Collection<Object[]> data() {
-    return Arrays.asList(new Object[][] {
-        { 1, "1" },
-        { 4, "4" },
-        { 22, "22" },
-        { 16, "16" },
-        { 98, "98" },
+    return Arrays.asList(new Object[][]{
+        {1, "1"},
+        {4, "4"},
+        {22, "22"},
+        {16, "16"},
+        {98, "98"},
 
         {3, "Fizz"},
         {6, "Fizz"},
