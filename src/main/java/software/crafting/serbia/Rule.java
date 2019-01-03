@@ -6,7 +6,7 @@ import java.util.function.Predicate;
 public class Rule {
 
   private Predicate<Integer> matcher;
-  private  Function<Integer, String> transformer;
+  private Function<Integer, String> transformer;
 
   public Rule(Predicate<Integer> matcher, Function<Integer, String> transformer) {
     this.matcher = matcher;
