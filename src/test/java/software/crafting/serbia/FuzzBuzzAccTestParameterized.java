@@ -37,6 +37,10 @@ public class FuzzBuzzAccTestParameterized {
         {50, "Buzz"},
         {100, "Buzz"},
 
+        {15, "FizzBuzz"},
+        {30, "FizzBuzz"},
+        {45, "FizzBuzz"},
+        {90, "FizzBuzz"}
     });
   }
 
