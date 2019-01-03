@@ -18,12 +18,15 @@ public class FizzBuzz {
 
 
   public String execute(int number) {
+    return transform(number);
+  }
+
+  private String transform(int number) {
     return rules.stream()
         .filter(rule -> rule.matches(number))
         .findFirst()
         .map(rule -> rule.transform(number))
         .orElseThrow(IllegalStateException::new);
-
   }
 
 }
