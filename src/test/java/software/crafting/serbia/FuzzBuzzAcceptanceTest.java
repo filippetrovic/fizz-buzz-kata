@@ -2,16 +2,7 @@ package software.crafting.serbia;
 
 import org.junit.Before;
 import org.junit.Test;
-import software.crafting.serbia.rule.Rule;
-import software.crafting.serbia.rule.RuleChain;
-import software.crafting.serbia.rule.RuleChainBuilder;
-import software.crafting.serbia.rule.predicate.IsNumberDivisibleByFive;
-import software.crafting.serbia.rule.predicate.IsNumberDivisibleByThree;
-import software.crafting.serbia.rule.predicate.MatchAll;
-import software.crafting.serbia.rule.transformer.BuzzTransformer;
-import software.crafting.serbia.rule.transformer.FizzBuzzTransformer;
-import software.crafting.serbia.rule.transformer.FizzTransformer;
-import software.crafting.serbia.rule.transformer.NoOppTransformer;
+import software.crafting.serbia.rule.RuleChains;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -21,21 +12,7 @@ public class FuzzBuzzAcceptanceTest {
 
   @Before
   public void setup() {
-    Rule fizzBuzzRule = new Rule(new IsNumberDivisibleByThree().and(new IsNumberDivisibleByFive()), new FizzBuzzTransformer());
-    Rule fizzRule = new Rule(new IsNumberDivisibleByThree(), new FizzTransformer());
-    Rule buzzRule = new Rule(new IsNumberDivisibleByFive(), new BuzzTransformer());
-    Rule otherRule = new Rule(new MatchAll(), new NoOppTransformer());
-
-    fizzBuzz = new FizzBuzz(getOriginalFizzBuzzRuleChain(fizzBuzzRule, fizzRule, buzzRule, otherRule));
-  }
-
-  private static RuleChain getOriginalFizzBuzzRuleChain(Rule fizzBuzzRule, Rule fizzRule, Rule buzzRule, Rule otherRule) {
-    return new RuleChainBuilder()
-        .addNextRule(fizzBuzzRule)
-        .addNextRule(fizzRule)
-        .addNextRule(buzzRule)
-        .addNextRule(otherRule)
-        .createRuleChain();
+    fizzBuzz = new FizzBuzz(RuleChains.getOriginalFizzBuzzRuleChain());
   }
 
   @Test
