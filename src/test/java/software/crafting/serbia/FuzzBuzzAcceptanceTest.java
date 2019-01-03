@@ -12,7 +12,7 @@ import java.util.Collection;
 import static org.assertj.core.api.Assertions.*;
 
 @RunWith(Parameterized.class)
-public class FuzzBuzzAccTestParameterized {
+public class FuzzBuzzAcceptanceTest {
 
   @Parameters
   public static Collection<Object[]> data() {
@@ -50,7 +50,7 @@ public class FuzzBuzzAccTestParameterized {
   private Integer number;
   private String expectedOutput;
 
-  public FuzzBuzzAccTestParameterized(Integer number, String expectedOutput) {
+  public FuzzBuzzAcceptanceTest(Integer number, String expectedOutput) {
     fizzBuzz = new FizzBuzz(RuleChains.getOriginalFizzBuzzRuleChain());
 
     this.number = number;
