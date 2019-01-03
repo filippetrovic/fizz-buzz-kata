@@ -12,7 +12,9 @@ public class FizzBuzz {
     Rule buzzRule = new Rule(new IsNumberDivisibleByFive(), new BuzzTransformer());
     Rule otherRule = new Rule(new MatchAll(), new NoOppTransformer());
 
-    ruleChain = new RuleChain(Arrays.asList(fizzBuzzRule, fizzRule, buzzRule, otherRule));
+    ruleChain = new RuleChainBuilder()
+        .setRules(Arrays.asList(fizzBuzzRule, fizzRule, buzzRule, otherRule))
+        .createRuleChain();
   }
 
 
