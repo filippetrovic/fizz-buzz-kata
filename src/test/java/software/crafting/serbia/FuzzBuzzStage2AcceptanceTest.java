@@ -30,6 +30,8 @@ public class FuzzBuzzStage2AcceptanceTest {
         {33, "Fizz"},
         {18, "Fizz"},
 
+        {13, "Fizz"},
+
         {5, "Buzz"},
         {10, "Buzz"},
         {20, "Buzz"},
