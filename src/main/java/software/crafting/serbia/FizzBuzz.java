@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class FizzBuzz {
 
-  private final RuleChain ruleChain = new RuleChain();
+  private final RuleChain ruleChain;
 
   public FizzBuzz() {
     Rule fizzBuzzRule = new Rule(new IsNumberDivisibleByThree().and(new IsNumberDivisibleByFive()), new FizzBuzzTransformer());
@@ -12,7 +12,7 @@ public class FizzBuzz {
     Rule buzzRule = new Rule(new IsNumberDivisibleByFive(), new BuzzTransformer());
     Rule otherRule = new Rule(new MatchAll(), new NoOppTransformer());
 
-    ruleChain.rules = Arrays.asList(fizzBuzzRule, fizzRule, buzzRule, otherRule);
+    ruleChain = new RuleChain(Arrays.asList(fizzBuzzRule, fizzRule, buzzRule, otherRule));
   }
 
 

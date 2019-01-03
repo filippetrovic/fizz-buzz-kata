@@ -1,12 +1,14 @@
 package software.crafting.serbia;
 
+import java.util.Collections;
 import java.util.List;
 
 public class RuleChain {
 
-  List<Rule> rules;
+  private List<Rule> rules;
 
-  public RuleChain() {
+  public RuleChain(List<Rule> rules) {
+    this.rules = Collections.unmodifiableList(rules);
   }
 
   String transform(int number) {
