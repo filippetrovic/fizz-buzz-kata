@@ -1,4 +1,4 @@
-package software.crafting.serbia.transformer;
+package software.crafting.serbia.rule.transformer;
 
 import java.util.function.Function;
 

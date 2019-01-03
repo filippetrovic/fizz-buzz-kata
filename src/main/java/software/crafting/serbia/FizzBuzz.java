@@ -1,15 +1,15 @@
 package software.crafting.serbia;
 
-import software.crafting.serbia.predicate.IsNumberDivisibleByFive;
-import software.crafting.serbia.predicate.IsNumberDivisibleByThree;
-import software.crafting.serbia.predicate.MatchAll;
 import software.crafting.serbia.rule.Rule;
 import software.crafting.serbia.rule.RuleChain;
 import software.crafting.serbia.rule.RuleChainBuilder;
-import software.crafting.serbia.transformer.BuzzTransformer;
-import software.crafting.serbia.transformer.FizzBuzzTransformer;
-import software.crafting.serbia.transformer.FizzTransformer;
-import software.crafting.serbia.transformer.NoOppTransformer;
+import software.crafting.serbia.rule.predicate.IsNumberDivisibleByFive;
+import software.crafting.serbia.rule.predicate.IsNumberDivisibleByThree;
+import software.crafting.serbia.rule.predicate.MatchAll;
+import software.crafting.serbia.rule.transformer.BuzzTransformer;
+import software.crafting.serbia.rule.transformer.FizzBuzzTransformer;
+import software.crafting.serbia.rule.transformer.FizzTransformer;
+import software.crafting.serbia.rule.transformer.NoOppTransformer;
 
 import java.util.Arrays;
 

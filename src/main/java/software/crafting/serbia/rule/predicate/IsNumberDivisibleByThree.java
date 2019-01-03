@@ -1,4 +1,4 @@
-package software.crafting.serbia.predicate;
+package software.crafting.serbia.rule.predicate;
 
 import java.util.function.Predicate;
 
