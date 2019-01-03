@@ -1,5 +1,8 @@
 package software.crafting.serbia;
 
+import software.crafting.serbia.predicate.IsNumberDivisibleByFive;
+import software.crafting.serbia.predicate.IsNumberDivisibleByThree;
+import software.crafting.serbia.predicate.MatchAll;
 import software.crafting.serbia.transformer.BuzzTransformer;
 import software.crafting.serbia.transformer.FizzBuzzTransformer;
 import software.crafting.serbia.transformer.FizzTransformer;
