@@ -49,7 +49,7 @@ public class FuzzBuzzStage2AcceptanceTest {
   private String expectedOutput;
 
   public FuzzBuzzStage2AcceptanceTest(Integer number, String expectedOutput) {
-    fizzBuzz = new FizzBuzz(RuleChains.getOriginalFizzBuzzRuleChain());
+    fizzBuzz = new FizzBuzz(RuleChains.getStage2FizzBuzzRuleChain());
 
     this.number = number;
     this.expectedOutput = expectedOutput;
