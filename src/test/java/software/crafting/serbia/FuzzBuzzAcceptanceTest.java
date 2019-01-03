@@ -16,21 +16,6 @@ public class FuzzBuzzAcceptanceTest {
   }
 
   @Test
-  public void shouldReturnFizzIfNumberIsDivisibleOnlyBy3() {
-    assertThat(fizzBuzz.execute(3)).isEqualTo("Fizz");
-
-    assertThat(fizzBuzz.execute(6)).isEqualTo("Fizz");
-
-    assertThat(fizzBuzz.execute(9)).isEqualTo("Fizz");
-
-    assertThat(fizzBuzz.execute(99)).isEqualTo("Fizz");
-
-    assertThat(fizzBuzz.execute(33)).isEqualTo("Fizz");
-
-    assertThat(fizzBuzz.execute(18)).isEqualTo("Fizz");
-  }
-
-  @Test
   public void shouldReturnBuzzIfNumberIsDivisibleOnlyBy5() {
     assertThat(fizzBuzz.execute(5)).isEqualTo("Buzz");
 

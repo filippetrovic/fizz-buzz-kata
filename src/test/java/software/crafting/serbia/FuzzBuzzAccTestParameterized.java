@@ -21,6 +21,13 @@ public class FuzzBuzzAccTestParameterized {
         { 22, "22" },
         { 16, "16" },
         { 98, "98" },
+
+        {3, "Fizz"},
+        {6, "Fizz"},
+        {9, "Fizz"},
+        {99, "Fizz"},
+        {33, "Fizz"},
+        {18, "Fizz"},
     });
   }
 
