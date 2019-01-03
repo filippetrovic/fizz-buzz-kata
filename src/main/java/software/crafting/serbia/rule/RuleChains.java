@@ -28,7 +28,7 @@ public class RuleChains {
   }
 
   public static RuleChain getStage2FizzBuzzRuleChain() {
-    Rule fizzBuzzRule = new Rule(new IsNumberDivisibleByThree().and(new IsNumberDivisibleByFive()), new FizzBuzzTransformer());
+    Rule fizzBuzzRule = new Rule((new IsNumberDivisibleByThree().or(new ContainsDigitThree())).and(new IsNumberDivisibleByFive()), new FizzBuzzTransformer());
     Rule fizzRule = new Rule(new IsNumberDivisibleByThree().or(new ContainsDigitThree()), new FizzTransformer());
     Rule buzzRule = new Rule(new IsNumberDivisibleByFive().or(new ContainsDigitFive()), new BuzzTransformer());
     Rule otherRule = new Rule(new MatchAll(), new NoOppTransformer());
