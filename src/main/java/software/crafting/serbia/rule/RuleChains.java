@@ -1,5 +1,6 @@
 package software.crafting.serbia.rule;
 
+import software.crafting.serbia.rule.predicate.ContainsDigitFive;
 import software.crafting.serbia.rule.predicate.ContainsDigitThree;
 import software.crafting.serbia.rule.predicate.IsNumberDivisibleByFive;
 import software.crafting.serbia.rule.predicate.IsNumberDivisibleByThree;
@@ -29,7 +30,7 @@ public class RuleChains {
   public static RuleChain getStage2FizzBuzzRuleChain() {
     Rule fizzBuzzRule = new Rule(new IsNumberDivisibleByThree().and(new IsNumberDivisibleByFive()), new FizzBuzzTransformer());
     Rule fizzRule = new Rule(new IsNumberDivisibleByThree().or(new ContainsDigitThree()), new FizzTransformer());
-    Rule buzzRule = new Rule(new IsNumberDivisibleByFive(), new BuzzTransformer());
+    Rule buzzRule = new Rule(new IsNumberDivisibleByFive().or(new ContainsDigitFive()), new BuzzTransformer());
     Rule otherRule = new Rule(new MatchAll(), new NoOppTransformer());
 
     return new RuleChainBuilder()
