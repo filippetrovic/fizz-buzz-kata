@@ -10,6 +10,8 @@ import software.crafting.serbia.rule.transformer.FizzBuzzTransformer;
 import software.crafting.serbia.rule.transformer.FizzTransformer;
 import software.crafting.serbia.rule.transformer.NoOppTransformer;
 
+import java.util.function.Predicate;
+
 public class RuleChains {
 
   public static RuleChain getOriginalFizzBuzzRuleChain() {
@@ -28,10 +30,13 @@ public class RuleChains {
   }
 
   public static RuleChain getStage2FizzBuzzRuleChain() {
-    Rule fizzBuzzRule = new Rule((new IsNumberDivisibleByThree().or(new ContainsDigitThree())).and(new IsNumberDivisibleByFive().or(new ContainsDigitFive())), new FizzBuzzTransformer());
-    Rule fizzRule = new Rule(new IsNumberDivisibleByThree().or(new ContainsDigitThree()), new FizzTransformer());
-    Rule buzzRule = new Rule(new IsNumberDivisibleByFive().or(new ContainsDigitFive()), new BuzzTransformer());
-    Rule otherRule = new Rule(new MatchAll(), new NoOppTransformer());
+    final Predicate<Integer> fizzPredicate = new IsNumberDivisibleByThree().or(new ContainsDigitThree());
+    final Predicate<Integer> buzzPredicate = new IsNumberDivisibleByFive().or(new ContainsDigitFive());
+
+    final Rule fizzBuzzRule = new Rule(fizzPredicate.and(buzzPredicate), new FizzBuzzTransformer());
+    final Rule fizzRule = new Rule(fizzPredicate, new FizzTransformer());
+    final Rule buzzRule = new Rule(buzzPredicate, new BuzzTransformer());
+    final Rule otherRule = new Rule(new MatchAll(), new NoOppTransformer());
 
     return new RuleChainBuilder()
         .addNextRule(fizzBuzzRule)
