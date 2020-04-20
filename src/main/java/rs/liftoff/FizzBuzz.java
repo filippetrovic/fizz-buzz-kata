@@ -3,15 +3,19 @@ package rs.liftoff;
 class FizzBuzz {
 
   public String transform(int value) {
-    if (value % 3 == 0 && value % 5 == 0) {
+    if (isFizz(value) && value % 5 == 0) {
       return "FizzBuzz";
     }
-    if (value % 3 == 0) {
+    if (isFizz(value)) {
       return "Fizz";
     }
     if (value % 5 == 0) {
       return "Buzz";
     }
     return String.valueOf(value);
+  }
+
+  private boolean isFizz(int value) {
+    return value % 3 == 0;
   }
 }
