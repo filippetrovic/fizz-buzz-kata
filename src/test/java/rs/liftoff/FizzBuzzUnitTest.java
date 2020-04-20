@@ -9,13 +9,10 @@ public class FizzBuzzUnitTest {
   private FizzBuzz fizzBuzz = new FizzBuzz();
 
   @Test
-  public void shouldReturn1For1() {
+  public void shouldNotTransformInput() {
     assertThat(fizzBuzz.transform(1))
         .isEqualTo("1");
-  }
 
-  @Test
-  public void shouldReturn2For2() {
     assertThat(fizzBuzz.transform(2))
         .isEqualTo("2");
   }
