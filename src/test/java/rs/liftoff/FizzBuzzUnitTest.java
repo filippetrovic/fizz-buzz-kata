@@ -27,14 +27,12 @@ public class FizzBuzzUnitTest {
   }
 
   @Test
-  public void shouldReturnBuzzFor5() {
+  public void shouldReturnBuzz() {
     assertThat(fizzBuzz.transform(5))
         .isEqualTo("Buzz");
-  }
 
-  @Test
-  public void shouldReturnBuzzFor10() {
     assertThat(fizzBuzz.transform(10))
         .isEqualTo("Buzz");
   }
+
 }
