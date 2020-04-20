@@ -35,4 +35,9 @@ public class FizzBuzzUnitTest {
         .isEqualTo("Buzz");
   }
 
+  @Test
+  public void shouldReturnFizzBuzz() {
+    assertThat(fizzBuzz.transform(15))
+        .isEqualTo("FizzBuzz");
+  }
 }
