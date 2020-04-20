@@ -21,10 +21,24 @@ public class FizzBuzzUnitTest {
         .isEqualTo("1");
   }
 
+  @Test
+  public void shouldReturn2For2() {
+    // Given
+    int value = 2;
+
+    // When
+    String result = fizzBuzz.transform(value);
+
+    // Then
+    assertThat(result)
+        .isEqualTo("2");
+
+  }
+
   private class FizzBuzz {
 
     public String transform(int value) {
-      return "1";
+      return String.valueOf(value);
     }
   }
 }
