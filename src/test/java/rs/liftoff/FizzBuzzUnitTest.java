@@ -18,13 +18,10 @@ public class FizzBuzzUnitTest {
   }
 
   @Test
-  public void shouldReturnFizzFor3() {
+  public void shouldReturnFizz() {
     assertThat(fizzBuzz.transform(3))
         .isEqualTo("Fizz");
-  }
 
-  @Test
-  public void shouldReturnFizzFor6() {
     assertThat(fizzBuzz.transform(6))
         .isEqualTo("Fizz");
   }
