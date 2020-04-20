@@ -35,4 +35,16 @@ public class FizzBuzzUnitTest {
 
   }
 
+  @Test
+  public void shouldReturnFizzFor3() {
+    // given
+    int value = 3;
+
+    // when
+    String result = fizzBuzz.transform(value);
+
+    // then
+    assertThat(result)
+        .isEqualTo("Fizz");
+  }
 }
