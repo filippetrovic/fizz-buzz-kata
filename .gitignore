@@ -38,6 +38,7 @@ hs_err_pid*
 # Gradle:
 .idea/**/gradle.xml
 .idea/**/libraries
+.gradle
 
 ## File-based project format:
 *.iws
